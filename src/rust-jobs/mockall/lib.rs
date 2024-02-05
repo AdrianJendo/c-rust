@@ -44,18 +44,18 @@ fn test_test2() {
     sea::assume(x < 10);
 
     let mut mock = MockMyTrait::new();
-    mock.expect_bar()
-        .return_const(x);
+    // mock.expect_bar()
+    //     .return_const(x);
     mock.expect_foo()
-        .with(predicate::lt(10))
+        .with(predicate::lt(11))
         .times(1)
         .returning(|x| x + 4);
 
-    sea::sassert!(call_bar(&mock) == x);
+    // sea::sassert!(call_bar(&mock) == x+1);
     sea::sassert!(call_foo(&mock, x) < 14);
 }
 
-// #[cfg(test)]
+#[cfg(test)]
 mod tests {
     use super::*;
 

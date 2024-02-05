@@ -14,5 +14,5 @@ fn test_test1() {
     sea::assume(x < 10);
     x += 4;
 
-    sea::sassert!(x < 14);
+    sea::sassert!(x < 13);
 }
